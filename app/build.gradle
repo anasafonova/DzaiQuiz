@@ -29,12 +29,12 @@ android {
         }
     }
 
-    flavorDimensions "product"
+    flavorDimensions = [ "product" ]
 
     productFlavors {
         dev {
             dimension "product"
-            buildConfigField "String", "BASE_URL", "\"https://psycotro.pics\""
+            buildConfigField "String", "BASE_URL", "\"https://abcrrro.pics\""
         }
     }
 

@@ -25,10 +25,4 @@ class DatabaseModule {
     fun providesQuizDao(database: QuizDatabase): QuestionsDao {
         return database.questionsDao()
     }
-//
-//    @Singleton
-//    @Provides
-//    fun productRepository(questionsDao: QuestionsDao?): QuestionsRepository {
-//        return ProductDataSource(productDao)
-//    }
 }

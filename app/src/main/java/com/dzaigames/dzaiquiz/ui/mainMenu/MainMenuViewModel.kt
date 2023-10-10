@@ -12,7 +12,6 @@ import javax.inject.Inject
 class MainMenuViewModel @Inject constructor(
     questionsRepository: QuestionsRepository
 ): ViewModel() {
-//    lateinit
     var questions: StateFlow<List<QuestionDto>> = questionsRepository
         .getQuestions()
         .stateIn(
@@ -20,27 +19,4 @@ class MainMenuViewModel @Inject constructor(
             started = SharingStarted.Lazily,
             initialValue = listOf()
         )
-//    = MutableStateFlow(
-//        listOf()
-//    ) //LiveData<List<QuestionDto>>
-
-//    init {
-////        loadQuestions()
-//    }
-
-//    private fun loadQuestions() {
-//        viewModelScope.launch {
-//            questions =
-//                questionsRepository.getQuestions().stateIn(viewModelScope)
-//        //.asLiveData(Dispatchers.IO)
-////            questionsRepository.getQuestions()
-////                .catch {
-////                    // error handling
-////                }
-////                .collect { questions ->
-////                    this.questions = questions
-////                }
-//        }
-//    }
-
 }

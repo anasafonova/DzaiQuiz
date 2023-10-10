@@ -4,8 +4,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.navigation.NavController
 import com.dzaigames.dzaiquiz.data.model.QuestionDto
 
 @Composable
@@ -29,7 +27,7 @@ fun ItemsColumn(
             )
         }
 
-        if (questions != null)
+        if (questions.isNotEmpty())
             items(
                 questions.size
             ) {
@@ -37,13 +35,3 @@ fun ItemsColumn(
             }
     }
 }
-
-//@Composable
-//fun Item(
-//    question: QuestionDto?
-//) {
-//    if (question == null)
-//        return
-//
-//    Text(text = question.toString())
-//}

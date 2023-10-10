@@ -3,7 +3,7 @@ package com.dzaigames.dzaiquiz.dagger
 import com.dzaigames.dzaiquiz.BuildConfig
 import com.dzaigames.dzaiquiz.data.api.QuestionApi
 import com.dzaigames.dzaiquiz.data.api.QuestionApiImpl
-import com.dzaigames.dzaiquiz.data.api.RetrofitQuestionApi
+import com.dzaigames.dzaiquiz.data.api.RetrofitQuestionsApi
 import com.dzaigames.dzaiquiz.data.calladapter.ResultCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -34,13 +34,13 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesRetrofitQuestionsApi(retrofit: Retrofit): RetrofitQuestionApi {
-        return retrofit.create(RetrofitQuestionApi::class.java)
+    fun providesRetrofitQuestionsApi(retrofit: Retrofit): RetrofitQuestionsApi {
+        return retrofit.create(RetrofitQuestionsApi::class.java)
     }
 
     @Singleton
     @Provides
-    fun providesQuestionsApi(retrofitQuestionApi: RetrofitQuestionApi): QuestionApi {
-        return QuestionApiImpl(retrofitQuestionApi = retrofitQuestionApi)
+    fun providesQuestionsApi(retrofitQuestionsApi: RetrofitQuestionsApi): QuestionApi {
+        return QuestionApiImpl(retrofitQuestionsApi = retrofitQuestionsApi)
     }
 }

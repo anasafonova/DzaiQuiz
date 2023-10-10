@@ -7,10 +7,10 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.lang.Exception
 
-class QuestionApiImpl(private val retrofitQuestionApi: RetrofitQuestionApi): QuestionApi {
+class QuestionApiImpl(private val retrofitQuestionsApi: RetrofitQuestionsApi): QuestionApi {
     override fun fetchQuestions(): Flow<List<QuestionDto>> = flow {
         try {
-            emit(retrofitQuestionApi.fetchQuestions().map { it.toDto() })
+            emit(retrofitQuestionsApi.fetchQuestions().map { it.toDto() })
         }
         catch (throwable: Exception) {
             throwable.printStackTrace()
